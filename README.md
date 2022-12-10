@@ -13,6 +13,8 @@ VSM is a Work In Progress project that will get updates over time. New nodes and
 ### License
 You can customize this tool as much as you need if you bought it already, but you can't share or redistribute this for any purpose. Distributing rights for this tool is belong to iBright Games.
 
+## Logic
+
 ### What is Logic
 Logic is script that decides the behavioral activity of Graph. Different Logics means different graphs. This systems allows to use different systems on combination with each-other without rewriting all scripts at all. Different logics can use same nodes and systems at all.
 
@@ -61,6 +63,8 @@ public override List<object> BlackboardProperties => new List<object>()
 This method overrides the popup menu that opens when creating new nodes. You should create a list of SearchTreeEntry in order and return that.<br/>
 _Check DialogueGraphLogic.cs for more detail._
 
+## Nodes
+    
 ### How to Add Nodes
 
 1. Create a new C# script that inherits from StateNodeData.cs.
