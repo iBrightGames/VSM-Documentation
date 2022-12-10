@@ -13,8 +13,6 @@ VSM is a Work In Progress project that will get updates over time. New nodes and
 ### License
 You can customize this tool as much as you need if you bought it already, but you can't share or redistribute this for any purpose. Distributing rights for this tool is belong to iBright Games.
 
-## Logic
-
 ### What is Logic
 Logic is script that decides the behavioral activity of Graph. Different Logics means different graphs. This systems allows to use different systems on combination with each-other without rewriting all scripts at all. Different logics can use same nodes and systems at all.
 
@@ -37,17 +35,31 @@ Creating new C# script inheriting StateGraphLogic will result a new logic. Placi
 ### How to Customize a Logic
 Logics use some specific methods to change activities of graph. You can override these methods and write your own activities inside them. Methods and properties are listed below:
 
+* **public override List<object> Nodes**<br/>
+This should return the nodes that will be used in your logic. You should follow the following syntax:<br/>
+`
+public override List<object> Nodes => new List<object>
+{
+    new StateNode(),
+    new CustomNode()
+};
+`
+
+* **public override List<object> BlackboardProperties**<br/>
+This should return the Blackboard Properties that will be used in your logic. You should follow the following syntax:<br/>
+`        
+public override List<object> BlackboardProperties => new List<object>()
+{
+    new BlackboardProperty(),
+    new CustomProperty()
+};
+`
+
+* You can implement new groups of nodes by duplicating Nodes return and overriding following SearchTreeEntries function.
+
 * **public override List<SearchTreeEntry> SearchTreeEntries(Texture2D)**<br/>
 This method overrides the popup menu that opens when creating new nodes. You should create a list of SearchTreeEntry in order and return that.<br/>
-_Check StateGraphLogic.cs for more detail._
-
-* **public override bool OnSelectEntry(StateGraphView, object, Vector2)**<br/>
-This method overrides when user selects a node from the pop-up menu. You should pass a creating node for all entries passed in SearchTreeEntries.<br/>
-_Check StateGraphLogic.cs for more detail._
-
-* **public override void CreateAllNodes(StateGraphView, StateData)**<br/>
-This method is called when user tries to open a related Database as a whole. You should create all nodes that exists in related database here.<br/>
-_Check StateGraphLogic.cs for more detail._
+_Check DialogueGraphLogic.cs for more detail._
 
 ## Nodes
 
