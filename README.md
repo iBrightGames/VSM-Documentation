@@ -61,12 +61,13 @@ public override List<object> BlackboardProperties => new List<object>()
 This method overrides the popup menu that opens when creating new nodes. You should create a list of SearchTreeEntry in order and return that.<br/>
 _Check DialogueGraphLogic.cs for more detail._
 
-## Nodes
-
 ### How to Add Nodes
 
 1. Create a new C# script that inherits from StateNodeData.cs.
 2. Create a new C# script in Editor folder that inherits from StateNode.cs.
+
+_Note: You can create add your custom type to NodeTypes by customizing NodeType.cs code. It's default location is:,<br/>_
+`./DialogueSystem/Runtime/NodeUtilities/NodeType.cs`
 
 _Check base scripts for override functions._
 
@@ -89,7 +90,7 @@ To use different logic, you need different databases. You can create custom data
 1. Create C# script that inherits from StateData.cs
 2. Voila! You now have custom database.
 3. You can add your new nodes in your custom database List<newNode> and start using it.
-
+    
 ## Dependencies
 
 ### Requirements
