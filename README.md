@@ -93,7 +93,6 @@ To use different logic, you need different databases. You can create custom data
 
 1. Create C# script that inherits from StateData.cs
 2. Voila! You now have custom database.
-3. You can add your new nodes in your custom database List<newNode> and start using it.
     
 ## Dependencies
 
