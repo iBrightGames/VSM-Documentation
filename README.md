@@ -82,6 +82,7 @@ _Check base scripts for override functions._
 3. If you want to edit the data of the node, you should go for [nodeeName]Data.cs
 4. You can edit these C# scripts as you wish.
 
+_Note: All node datas should have exact naming, [nodeName] following with 'Data'._
 
 ### How to Implement Nodes on Logics
 To use newly created nodes, you should implement them into related logics.<br/>
